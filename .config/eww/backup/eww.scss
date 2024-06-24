@@ -1,0 +1,53 @@
+$blue_moon:  #6A9BDC; // Primary
+$moonlight:  #E38C1B; // Contrast, orange
+$teel:       #58D3D8; // Secondary
+$deep_blue:  #141A4E; // Shadows
+$sand_white: #FFEDAB; // Highlights
+$background: #0D0F17; // Background, blue-black
+
+@mixin workspace_theme($foreground: $teel, $background: $background) {
+  background: $background;
+  color: $foreground;
+  margin: 5px;
+  font-size: 13pt;
+  font-weight: 600;
+  border-radius: 17.5px;
+}
+
+
+.workspaces-widget {
+
+}
+
+.workspace-entry-empty {
+	@include workspace_theme($foreground: $background);	
+}
+
+.workspace-entry-occupied {
+	@include workspace_theme($background: $deep_blue);
+}
+
+.workspace-entry-current-occupied {
+	@include workspace_theme($foreground: $moonlight, $background: $deep_blue);
+}
+
+.workspace-entry-current-empty {
+	@include workspace_theme($foreground: $moonlight);
+}
+
+.bar {
+	background: $background;
+	color: $sand_white;
+	font-family: "Comic Mono";
+}
+
+.time {
+	font-family: "Comic Mono";
+	font-weight: 700;
+	font-size: 18pt;
+}
+
+
+.net-box {
+	font-family: "Material Icons", "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+}

@@ -1,0 +1,113 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+version = 2
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+   [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:nord8'
+    template = '  {{ .UserName }} <p:nord4>in</>'
+
+    [blocks.segments.properties]
+      display_host = true
+
+
+  [[blocks.segments]]
+    type = 'path'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:nord8'
+    template = ' {{ .Path }}'
+
+    [blocks.segments.properties]
+      style = 'full'
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    foreground = 'p:nord7'
+    background = 'transparent'
+    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <p:nord8>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    foreground = 'p:nord13'
+    background = 'transparent'
+    template = 'took {{ .FormattedMs }} '
+
+    [blocks.segments.properties]
+      threshold = 5000
+
+  [[blocks.segments]]
+    type = 'time'
+    style = 'plain'
+    foreground = 'p:nord15'
+    background = 'transparent'
+    template = '  {{ .CurrentDate | date .Format }}'
+    
+    [blocks.segments.properties]
+      time_format = "Monday, Jan 2 15:04:05"
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    foreground_templates = [
+      "{{if gt .Code 0}}p:nord11{{end}}",
+      "{{if eq .Code 0}}p:nord8{{end}}",
+    ]
+    background = 'transparent'
+    template = '❯'
+
+[transient_prompt]
+  foreground_templates = [
+    "{{if gt .Code 0}}p:nord11{{end}}",
+    "{{if eq .Code 0}}p:nord8{{end}}",
+  ]
+  background = 'transparent'
+  template = '❯ '
+
+[secondary_prompt]
+  foreground = 'p:nord8'
+  background = 'transparent'
+  template = '❯❯'
+
+[palette]
+nord0 = '#2e3440'
+nord1 = '#3b4252'
+nord2 = '#434c5e'
+nord3 = '#4c566a'
+nord4 = '#d8dee9'
+nord5 = '#e5e9f0'
+nord6 = '#eceff4'
+nord7 = '#8fbcbb'
+nord8 = '#88c0d0'
+nord9 = '#81a1c1'
+nord10 = '#5e81ac'
+nord11 = '#bf616a'
+nord12 = '#d08770'
+nord13 = '#ebcb8b'
+nord14 = '#a3be8c'
+nord15 = '#b48ead'

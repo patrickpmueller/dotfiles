@@ -1,0 +1,203 @@
+/* Created   by https://github.com/rxyhn 
+   Designed  by https://github.com/rxyhn
+   Maintaned by https://github.com/rxyhn
+*/
+
+// Global
+*{
+  all: unset;
+}
+
+// Variable Color's
+$nord0: #2e3440;
+$nord1: #3b4252;
+$nord2: #434c5e;
+$nord3: #4c566a;
+$nord4: #d8dee9;
+$nord5: #e5e9f0;
+$nord6: #eceff4;
+$nord7: #8fbcbb;
+$nord8: #88c0d0;
+$nord9: #81a1c1;
+$nord10: #5e81ac;
+$nord11: #bf616a;
+$nord12: #d08770;
+$nord13: #ebcb8b;
+$nord14: #a3be8c;
+$nord15: #b48ead;
+
+$background: #1A1D24;
+$foreground: $nord4;
+
+$black: #24283B;
+$gray: #565F89;
+$red: #F7768E;
+$green: #73DACA;
+$yellow: #E0AF68;
+$blue: #7AA2F7;
+$magenta: #BB9AF7;
+$cyan: #7DCFFF;
+$white: $foreground;
+
+// EWW BAR
+.eww_bar{
+  background-color: $nord0;
+  padding: .5rem;
+  border-radius: 8px;
+  border-color: $nord2;
+  border-width: 2px;
+  border-style: solid;
+}
+
+// Launcher
+.launcher_icon{
+    color: $cyan;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-size: 1.7em;
+    padding: 1rem 0rem 1rem 0;
+}
+
+// Workspaces
+.works {
+  font-family: "JetBrainsMono Nerd Font Propo";
+  padding: .2rem .8rem .2rem .8rem;
+  background-color: $nord1;
+  border-radius: 5px;
+}
+
+.0 , .01, .02, .03, .04, .05, .06, .07, .08,
+.011, .022, .033, .044, .055, .066, .077, .088 {
+  margin: .55rem 0 .55rem 0;
+  font-size: 1.5em;
+
+}
+
+/* Unoccupied */
+.0 {
+color: $nord2;
+}
+
+/* Occupied */
+.01, .02, .03, .04, .05, .06, .07, .08 {
+  color: $nord4;
+}
+
+/* Focused */
+.011,
+.022,
+.033,
+.044,
+.055,
+.066,
+.077,
+.088 {
+  color: $nord7;
+}
+
+// Control Panel
+.control {
+padding: .5rem;
+font-family: "JetBrainsMono Nerd Font Propo";
+font-size: 1.6em;
+background-color: $nord1;
+border-radius: 5px;
+}
+.wifi-icon{
+  margin-bottom: .2rem;
+  color: $nord15;
+}
+.brightness-icon{
+  margin: .2rem 0 .2rem 0;
+  color: $nord13;
+}
+.volume-icon{
+  margin: .2rem 0 .2rem 0;
+  color: $nord7;
+}
+scale trough {
+  all: unset;
+  background-color: $nord1;
+  border-radius: 5px;
+  min-height: 80px;
+  min-width: 10px;
+  margin: .3rem 0 .3rem 0;
+}
+.volbar trough highlight {
+  background-color: $nord7;
+  border-radius: 5px;
+}
+
+// Clock
+.time {
+  font-family: Comic Mono;
+  font-weight: bold;
+  font-size: 1.2em;
+  background-color: $nord1;
+  color: $nord4;
+  border-radius: 5px;
+  padding: .7rem 0 .5rem 0;
+  margin: .5rem 0 .5rem 0;
+}
+
+// Calendar
+.cal-box {
+  background-color: $nord0;
+  font-family: Comic Mono;
+  font-size: 1em;
+  border: solid 2px $nord2;
+  border-radius: 8px;
+
+  .cal-inner-box {
+      padding: 1rem 1rem .2rem;
+
+      .cal {
+          &.highlight {
+              padding: 1rem;
+          }
+
+          padding: 0.5rem .25rem 0rem;
+          margin-left: 10px;
+      }
+  }
+}
+
+calendar:selected {
+  color: $nord8;
+}
+
+calendar.header {
+color: $nord7;
+}
+
+calendar.button {
+color: $nord7;
+}
+
+calendar:indeterminate {
+color: $nord2;
+}
+
+// Powermenu
+.powermenu {
+  font-family: feather;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+.button-reb, .button-lock,
+.button-quit, .button-off{
+  padding: .5rem .2rem .3rem .2rem;
+  font-family: "JetBrainsMono Nerd Font Propo";
+}
+.button-off{
+  margin-bottom: .5rem;
+  color: $nord11;
+}
+.button-reb{
+  color: $nord13;
+}
+.button-quit{
+  color: $nord15;
+}
+.button-lock{
+  color: $nord10;
+}

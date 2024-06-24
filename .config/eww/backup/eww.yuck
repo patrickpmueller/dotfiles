@@ -1,0 +1,100 @@
+(defwindow main_bar
+  :monitor 0
+  :geometry (geometry 
+              :x "5px"
+              :y "0%"
+              :width "45px"
+              :height "99%"
+              :anchor "left center")
+  :stacking "fg"
+  :exclusive true
+  :namespace "HyprEww"
+  (vert_layout)
+ )
+
+
+(defpoll min :interval "3s" `date +%M`)
+(defpoll hour :interval "10s" `date +%H`)
+(defpoll day :interval "180s" `date +%d`)
+(defpoll month :interval "180s" `date +%m`)
+(defpoll week :interval "180s" `date +%a`)
+(defpoll net :interval "100s"
+  :initial ""
+  `nmcli -t -f SIGNAL,ACTIVE device wifi | awk -F':' '{if($2=="yes")print$1}'`)
+
+(defpoll workspaces :interval "1s" :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+(defpoll current_workspace :interval "1s" :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+
+
+(defwidget vert_layout [] 
+  (box 
+    :class "bar"
+    :orientation "v"
+    (workspaces)
+    (box 
+      :class "utils"
+      :halign "fill"
+      :valign "end"
+      :vexpand true
+      :active true
+      :orientation "v" 
+      (network :strength net :offline "" :excellent "" :good ""
+                :okay "" :slow "")
+      (time)
+      (box :height 10)
+      (date)
+    )
+  )
+)
+
+(defwidget date [] 
+  (box
+    :orientation "v"
+    :class "date"
+    (label :text week)
+    (label :text "${day}/${month}")
+  )
+)
+
+
+(defwidget time [] 
+  (box 
+    :orientation "v"
+    :class "time"
+    (label :text hour)
+    (label :text min)
+  )
+)
+
+(defwidget network [strength offline excellent good okay slow]
+  (box :class "net-box"
+       :space-evenly false
+       :spacing 8
+    (label :text {strength == "" ? offline : strength < 26 ? slow : strength < 51 ? okay : strength < 76 ? good : excellent}
+      )
+    )
+  )
+
+
+(defwidget workspaces []
+  (eventbox :onscroll "bash ~/.config/eww/scripts/change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+    (box
+      :orientation "v"
+      :spacing 5
+      :valign "start"
+      :vexpand true
+      :active true
+      :halign "fill"
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}" 
+          :height 45
+          :width 45
+          (box :class "workspace-entry${workspace.id == current_workspace ? "-current" : ""}-${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.id}")
+            )
+          )
+        )
+      )
+    )
+  )
