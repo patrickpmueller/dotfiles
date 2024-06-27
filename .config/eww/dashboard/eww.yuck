@@ -3,9 +3,15 @@
 ;;;;			AESTHETIC DASHBOARD					 ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(include "./src/yuck/_windows.yuck")
-(include "./src/yuck/_widgets.yuck")
-(include "./src/yuck/_variables.yuck")
+(include "./src/yuck/widgets.yuck")
+(include "./src/yuck/variables.yuck")
 
-
+(defwindow dashboard
+    :monitor 0
+    :geometry (geometry :x "0"
+                        :y "0"
+                        :anchor "center")
+    :windowtype "dock"
+    :wm-ignore true
+(dashboard))
 	
