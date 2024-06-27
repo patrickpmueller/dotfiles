@@ -1,9 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -72,8 +69,6 @@ HYPHEN_INSENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -101,7 +96,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias crontab=fcrontab
-alias aur-remove="sudo repo-remove /var/cache/pacman/custom/custom.db.tar"
+alias aur-remove="sudo repo-remove /home/patrickpmueller/.cache/aur-repo/aur.db.tar.gz"
 
 export EDITOR="nvim"
 
@@ -122,4 +117,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-alias git-config='/usr/bin/git --git-dir=/home/patrickpmueller/.config/ --work-tree=/home/patrickpmueller'
+alias git-dotfiles='/usr/bin/git --git-dir=/home/patrickpmueller/.config/ --work-tree=/home/patrickpmueller'

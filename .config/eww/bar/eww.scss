@@ -59,38 +59,37 @@ $white: $foreground;
 
 // Workspaces
 .works {
-  font-family: "JetBrainsMono Nerd Font Propo";
-  padding: .2rem .8rem .2rem .8rem;
-  background-color: $nord1;
-  border-radius: 5px;
+    padding: .2rem .7rem .2rem .7rem;
+    background-color: $nord1;
+    border-radius: 5px;
 }
 
-.0 , .01, .02, .03, .04, .05, .06, .07, .08,
-.011, .022, .033, .044, .055, .066, .077, .088 {
-  margin: .55rem 0 .55rem 0;
-  font-size: 1.5em;
-
+.w0 , .w01, .w02, .w03, .w04, .w05, .w06, .w07, .w08,
+.w011, .w022, .w033, .w044, .w055, .w066, .w077, .w088 { 
+    font-size: 2.3em;
+    margin: .3rem 0 .3rem 0;
+    font-family: "JetBrainsMono NFM";
 }
 
 /* Unoccupied */
-.0 {
+.w0 {
 color: $nord2;
 }
 
 /* Occupied */
-.01, .02, .03, .04, .05, .06, .07, .08 {
+.w01, .w02, .w03, .w04, .w05, .w06, .w07, .w08 {
   color: $nord4;
 }
 
 /* Focused */
-.011,
-.022,
-.033,
-.044,
-.055,
-.066,
-.077,
-.088 {
+.w011,
+.w022,
+.w033,
+.w044,
+.w055,
+.w066,
+.w077,
+.w088 {
   color: $nord7;
 }
 

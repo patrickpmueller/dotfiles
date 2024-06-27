@@ -13,7 +13,7 @@ workspaces() {
 
 	# Unoccupied
 	un="0"
-	# check if Occupied
+# check if Occupied
 	o1=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws1" )
 	o2=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws2" )
 	o3=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws3" )
@@ -41,7 +41,7 @@ workspaces() {
 	# u4=$(bspc query -D -d .urgent --names | grep 4)
 	# u5=$(bspc query -D -d .urgent --names | grep 5)
 
-	echo 	"(box	:class \"works\" :orientation \"v\"	:halign \"center\"	:valign \"start\"	 :space-evenly \"false\" :spacing \"-5\" (button :onclick \"bspc desktop -f $ws1\"	:class	\"$un$o1$f1\"	\"\") (button :onclick \"bspc desktop -f $ws2\"	:class \"$un$o2$f2\"	 \"󰈹\") (button :onclick \"bspc desktop -f $ws3\"	:class \"$un$o3$f3\" \"󰣆\") (button :onclick \"bspc desktop -f $ws4\"	:class \"$un$o4$f4\"	\"\") (button :onclick \"bspc desktop -f $ws5\"	:class \"$un$o5$f5\" \"󰓇\" )  (button :onclick \"bspc desktop -f $ws6\"	:class \"$un$o6$f6\" \"\") (button :onclick \"bspc desktop -f $ws7\"	:class \"$un$o7$f7\" \"\") (button :onclick \"bspc desktop -f $ws8\"	:class \"$un$o8$f8\" \"\"))"
+	echo 	"(box	:class \"works\" :orientation \"v\"	:halign \"center\"	:valign \"start\"	 :space-evenly \"false\" :spacing \"-5\" (button :onclick \"bspc desktop -f $ws1\"	:class	\"w$un$o1$f1\"	\"\") (button :onclick \"bspc desktop -f $ws2\"	:class \"w$un$o2$f2\"	 \"󰈹\") (button :onclick \"bspc desktop -f $ws3\"	:class \"w$un$o3$f3\" \"󰣆\") (button :onclick \"bspc desktop -f $ws4\"	:class \"w$un$o4$f4\"	\"\") (button :onclick \"bspc desktop -f $ws5\"	:class \"w$un$o5$f5\" \"󰓇\" )  (button :onclick \"bspc desktop -f $ws6\"	:class \"w$un$o6$f6\" \"\") (button :onclick \"bspc desktop -f $ws7\"	:class \"w$un$o7$f7\" \"\") (button :onclick \"bspc desktop -f $ws8\"	:class \"w$un$o8$f8\" \"\"))"
 
 }
 workspaces
