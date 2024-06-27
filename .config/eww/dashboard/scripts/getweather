@@ -10,9 +10,9 @@ cache_weather_city=${cache_dir}/weather-city
 cache_weather_country=${cache_dir}/weather-country
 
 ## Weather data
-KEY=""
-ID=""
-UNIT=""	# Available options : 'metric' or 'imperial'
+KEY="5b3db6bf872e1143e96b8c955e8c714c"
+ID="2636713"
+UNIT="metric"	# Available options : 'metric' or 'imperial'
 
 ## Make cache dir
 if [[ ! -d "$cache_dir" ]]; then
