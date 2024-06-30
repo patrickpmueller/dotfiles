@@ -117,4 +117,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-alias git-dotfiles='/usr/bin/git --git-dir=/home/patrickpmueller/.config/ --work-tree=/home/patrickpmueller'
+alias git-df='/usr/bin/git --git-dir=/home/patrickpmueller/.config/ --work-tree=/home/patrickpmueller'
