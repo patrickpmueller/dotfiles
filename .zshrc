@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -67,10 +68,11 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+ZOXIDE_CMD_OVERRIDE=cd
+plugins=(git archlinux command-not-found rust python man sudo zoxide)
 
 # User configuration
-
+source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -96,11 +98,10 @@ plugins=(git)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias crontab=fcrontab
-alias aur-remove="sudo repo-remove /home/patrickpmueller/.cache/aur-repo/aur.db.tar.gz"
+alias aur-remove="repo-remove /home/patrickpmueller/.cache/aur-repo/aur.db.tar.gz"
 
 export EDITOR="nvim"
 
-eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/base.toml)"
 
 # >>> conda initialize >>>
