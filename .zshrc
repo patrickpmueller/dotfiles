@@ -96,7 +96,7 @@ plugins=(git)
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
 alias crontab=fcrontab
-alias aur-remove="sudo repo-remove /home/patrickpmueller/.cache/aur-repo/aur.db.tar.gz"
+alias aur-remove="repo-remove /home/patrickpmueller/.cache/aur-repo/aur.db.tar.gz"
 
 export EDITOR="nvim"
 
