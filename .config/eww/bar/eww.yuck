@@ -199,22 +199,22 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Bar Windows ;;
 (defwindow bar
-	:geometry (geometry :x "13px"
-		:height "1414px"
-		:width "47px"
+	:geometry (geometry :x "15px"
+		:height "1170px"
+		:width "50px"
 		:anchor "center left")
 	:monitor 0
 	:hexpand "false"
 	:vexpand "false"
 	:exclusive "true"
-	:stacking "bg"
+	:stacking "fg"
 	:namespace "magixbar"
 (bar))
 
 ;; Calendar Windows ;;
 (defwindow calendar
-	:geometry (geometry :x "13px" 
-						:y "1195px" 
+	:geometry (geometry :x "15px" 
+						:y "953px" 
 						:width "300px" 
 						:height "150px")
 	:monitor 0
