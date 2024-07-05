@@ -23,6 +23,7 @@ efibootmgr
 eww
 fcron
 fd
+feh
 firefox
 flatpak
 freecad
@@ -185,4 +186,4 @@ zerotier-one
 zoxide
 zsh
 zsh-autosuggestions
-zsh-completions
+zsh-completions\n
