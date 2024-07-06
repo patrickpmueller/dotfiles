@@ -113,6 +113,12 @@ border-radius: 5px;
   margin: .2rem 0 .2rem 0;
   color: $nord7;
 }
+.bat{
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-size: 1.2em;
+  padding-right: .445rem;
+  color: $nord9;
+}
 scale trough {
   all: unset;
   background-color: $nord1;
@@ -123,6 +129,10 @@ scale trough {
 }
 .volbar trough highlight {
   background-color: $nord7;
+  border-radius: 5px;
+}
+.bribar trough highlight {
+  background-color: $nord13;
   border-radius: 5px;
 }
 
