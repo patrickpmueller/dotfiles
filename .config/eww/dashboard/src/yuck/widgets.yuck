@@ -22,7 +22,7 @@
 (defwidget radialmeter [value text ?class ?labelclass]
     (circular-progress :value value
         :class "radial ${class}"
-        :start-angle 0
+        :start-at 0
         :thickness 12
         (label :text text
             :class "radial-label ${labelclass}"
@@ -30,7 +30,7 @@
             :show_truncated false
             :wrap false
             :angle 0.0)))            
-(defwidget circular-cpu[]
+(defwidget circular-bri[]
         (box	:spacing 0
             	:orientation "h"
             	:space-evenly false
@@ -41,7 +41,7 @@
             	:class "radial-brightness-box"
 				:tooltip "Current Brightness: ${current-brightness}%"
 (radialmeter 	:value current-brightness
-            	:text ""
+            	:text "󰃠"
             	:labelclass "brightness-radial-label"
             	:class "brightness-radial")
 		)
@@ -64,7 +64,7 @@
 		)
 	)
 )
-(defwidget circular-disk[]
+(defwidget circular-bat[]
         (box	:spacing 0
             	:orientation "h"
             	:space-evenly false
@@ -75,7 +75,7 @@
             	:class "radial-bat-box"
 				:tooltip "Battery Capacity: ${battery-capacity}%"
 (radialmeter 	:value battery-capacity
-            	:text ""
+            	:text "󰂁"
             	:labelclass "bat-radial-label"
             	:class "bat-radial")
 		)
@@ -101,10 +101,11 @@
 (defwidget msystray[]
 	(box :orientation 'v' 
 		 :class "systray-circular"
-	(box :orientation 'h' :space-evenly "false"
-	  (circular-disk)(circular-volume))
-	(box :orientation 'h' :space-evenly "false"
-	  (circular-ram)(circular-cpu))
+		:halign "center" :valign "center"
+	(box :orientation 'h' :space-evenly "false" :halign "center" :valign "center"
+	  (circular-bat)(circular-volume))
+	(box :orientation 'h' :space-evenly "false" :halign "center" :valign "center"
+	  (circular-ram)(circular-bri))
 	)
 )
 
@@ -203,19 +204,19 @@
 			:space-evenly "false"
 			:spacing 12
 	(button :class "app-firefox" 
-			:onclick "~/.config/eww/dashboard/scripts/open_apps --firefox" "")
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --firefox" "󰈹")
 	(button :class "app-reddit" 
 			:onclick "~/.config/eww/dashboard/scripts/open_apps --reddit" "")
 	(button :class "app-telegram" 
 			:onclick "~/.config/eww/dashboard/scripts/open_apps --telegram" "")
 	(button :class "app-code" 
-			:onclick "~/.config/eww/dashboard/scripts/open_apps --code" "﬏")
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --code" "󰨞")
 	(button :class "app-discord" 
 			:onclick "~/.config/eww/dashboard/scripts/open_apps --discord" "")
 	(button :class "app-github"
 			:onclick "~/.config/eww/dashboard/scripts/open_apps --github" "")
 	(button :class "app-spotify" 
-			:onclick "~/.config/eww/dashboard/scripts/open_apps --spotify" "阮")
+			:onclick "~/.config/eww/dashboard/scripts/open_apps --spotify" "󰓇")
 	)
 )
 

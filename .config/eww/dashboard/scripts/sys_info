@@ -52,7 +52,8 @@ get_bat(){
 
 ## Get Current Brightness
 get_bright(){
-	brightnessctl -m -d amdgpu_bl0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'
+	brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'
+	
 }
 
 ## Get Current Volume
