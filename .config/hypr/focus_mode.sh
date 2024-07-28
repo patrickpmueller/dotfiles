@@ -10,6 +10,7 @@ if [[ ! -f "$LOCK_FILE" ]]; then
 else
 	hyprctl keyword decoration:active_opacity 1
 	hyprctl keyword decoration:inactive_opacity 1
+	sleep 0.4s
 	hyprctl keyword decoration:blur:enabled false
 	rm "$LOCK_FILE"
 fi
