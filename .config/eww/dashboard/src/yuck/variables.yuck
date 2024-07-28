@@ -8,10 +8,10 @@
 (defpoll UNAME :interval "5m"  "whoami")
 
 ;; Systray Variables
-(defpoll ram-usage 			:interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --mem")
-(defpoll battery-capacity 	:interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --bat")
-(defpoll current-brightness :interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --bri")
-(defpoll current-volume 	:interval "1s"  "~/.config/eww/dashboard/scripts/sys_info --vol")
+(defpoll ram-usage 		:interval "2s"  "~/.config/eww/dashboard/scripts/sys_info --mem")
+(defpoll battery-capacity 	:interval "10s"  "~/.config/eww/dashboard/scripts/sys_info --bat")
+(defpoll current-brightness	:interval "2s"  "~/.config/eww/dashboard/scripts/sys_info --bri")
+(defpoll current-volume 	:interval "2s"  "~/.config/eww/dashboard/scripts/sys_info --vol")
 
 ;; Time Variables
 (defpoll hour 	:interval "1s" `date +%H`)
@@ -41,13 +41,13 @@
 ;; Todo Variables
 (defpoll todo 			        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo adaptive")
 (defpoll todo-num 		        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo adaptivenum")
-(defpoll todo-total 	        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo totnum")
+(defpoll todo-total		        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo totnum")
 (defpoll todo-apri 		        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo apri")
-(defpoll todo-apri-num 	        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo aprinum")
+(defpoll todo-apri-num			:interval "10s" "~/.config/eww/dashboard/scripts/check-todo aprinum")
 (defpoll otherpri 		        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo otherpri")
-(defpoll otherprinum 	        :interval "10s" "~/.config/eww/dashboard/scripts/check-todo otherprinum")
-(defpoll next_appointment       :interval "1m"  "~/.config/eww/dashboard/scripts/check-todo appoint")
-(defpoll next_appointment_time  :interval "1m"  "~/.config/eww/dashboard/scripts/check-todo appoint-time")
+(defpoll otherprinum			:interval "10s" "~/.config/eww/dashboard/scripts/check-todo otherprinum")
+(defpoll next_appointment		:interval "1m"  "~/.config/eww/dashboard/scripts/check-todo appoint")
+(defpoll next_appointment_time		:interval "1m"  "~/.config/eww/dashboard/scripts/check-todo appoint-time")
 
 ;; Task Variables
 (defpoll uptime			        :interval "60s"  "~/.config/eww/dashboard/scripts/task up")

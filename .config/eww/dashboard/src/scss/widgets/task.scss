@@ -1,11 +1,14 @@
 .task{
     background-color: $background;
-	color: $foreground;
-    border-radius: 12px;
+    color: $foreground;
+    border-radius: 8px;
     padding: 1.9rem;
     margin: .5rem;
-.task-list{
-  	margin: 0 0 0 2.5rem;
+	border-width: 2px;
+	border-color: $nord2;
+	border-style: solid;
+	.task-list{
+		margin: 0 0 0 2.5rem;
 	}
 }
 

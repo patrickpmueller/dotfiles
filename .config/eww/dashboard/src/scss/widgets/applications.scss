@@ -1,9 +1,13 @@
 .applications{
-	background-color: $background;
-	color: $foreground;
-	border-radius: 12px;
+	background-color: $nord0;
+	color: $nord4;
+	border-radius: 8px;
 	margin: .5rem;
 	padding: 1rem;
+	border-width: 2px;
+	border-color: $nord2;
+	border-style: solid;
+	min-width: 6em;
 }
 .app-firefox,
 .app-reddit,
@@ -12,11 +16,11 @@
 .app-code,
 .app-discord,
 .app-spotify{
+	font-family: JetBrainsMono Nerd Font Propo;
 	padding: 1rem;
 }
 .app-firefox,
 .app-discord{
-	font-family: "Font Awesome 5 Free";
 	font-size: 2.9em;
 }
 .app-discord{
@@ -27,7 +31,6 @@
 .app-telegram,
 .app-github,
 .app-spotify{
-	font-family: JetBrainsMono Nerd Font Propo;
 	font-size: 2.9em;
 }
 .app-code{

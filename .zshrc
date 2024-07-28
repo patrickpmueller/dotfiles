@@ -101,6 +101,7 @@ alias crontab=fcrontab
 alias aur-remove="repo-remove /home/patrickpmueller/.cache/aur-repo/aur.db.tar.gz"
 
 export EDITOR="nvim"
+export JAVA_HOME='/usr/lib/jvm/java-22-openjdk'
 
 eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/base.toml)"
 
@@ -118,4 +119,10 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+eval "$(register-python-argcomplete pipx)"
+
 alias git-df='/usr/bin/git --git-dir=/home/patrickpmueller/.config/ --work-tree=/home/patrickpmueller'
+
+# Created by `pipx` on 2024-07-17 18:26:18
+export PATH="$PATH:/home/patrickpmueller/.local/bin"

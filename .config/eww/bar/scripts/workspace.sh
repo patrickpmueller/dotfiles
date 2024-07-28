@@ -1,50 +1,60 @@
 #!/bin/sh
 
 workspaces() {
+	# Define arrays
+	ws=$(hyprctl workspaces -j | jq -r 'max_by(.id) | .id')
+	o=()
+	f=()
+	t=()
 
-	ws1=1
-	ws2=2
-	ws3=3
-	ws4=4
-	ws5=5
-	ws6=6
-	ws7=7
-	ws8=8
+	# Populate arrays
+	for (( i=1; i<$((ws+1)); i++ )); do
+		# Check if occupied
+		o+=($(hyprctl workspaces -j | jq -r '.[] | select(.windows > 0).id' | grep "$i" || echo 0))
+		# Check if focused
+		f+=($(hyprctl monitors -j | jq -r '.[] | select(.focused) | .activeWorkspace.id' | grep "$i" || echo 0))
+		# Check type
+		t+=($(hyprctl clients -j | jq -r ".[] | select(.workspace.id == $i) | .initialClass" | sort | uniq -c | sort -rn | head -n 1 | awk '{print $2}' || echo "empty"))
+	done
 
 	# Unoccupied
 	un="0"
-# check if Occupied
-	o1=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws1" )
-	o2=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws2" )
-	o3=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws3" )
-	o4=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws4" )
-	o5=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws5" )
-	o6=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws6" )
-	o7=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws7" )
-	o8=$(hyprctl workspaces -j | jq '.[] | select(.windows > 0).id' | grep "$ws8" )
+
+	echo ${o[*]}
+	echo ${f[*]}
+	echo ${t[*]}
 	
-	# check if Focused
-	f1=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id' | grep "$ws1" )
-	f2=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id' | grep "$ws2" )
-	f3=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id' | grep "$ws3" )
-	f4=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id' | grep "$ws4" )
-	f5=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id' | grep "$ws5" )
-	f6=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id' | grep "$ws6" )
-	f7=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id' | grep "$ws7" )
-	f8=$(hyprctl monitors -j | jq '.[] | select(.focused) | .activeWorkspace.id' | grep "$ws8" )
-
 	
-	# check if Urgent
-	# u1=$(bspc query -D -d .urgent --names | grep 1)
-	# u2=$(bspc query -D -d .urgent --names | grep 2)
-	# u3=$(bspc query -D -d .urgent --names | grep 3)
-	# u4=$(bspc query -D -d .urgent --names | grep 4)
-	# u5=$(bspc query -D -d .urgent --names | grep 5)
+	echo -n "(box :class \"works\" :orientation \"v\" :halign \"center\" :valign \"start\" :space-evenly \"false\" :spacing \"-5\""
+	for (( i=0; i<$ws; i++ )); do
+		echo -n " (button :onclick \"hyprctl dispatch workspace $((i+1))\" :class \"w$un${o[$i]}${f[$i]}\" \"$(symbol ${t[$i]})\")"
+	done
+	echo ")"
+}
 
-	echo 	"(box	:class \"works\" :orientation \"v\"	:halign \"center\"	:valign \"start\"	 :space-evenly \"false\" :spacing \"-5\" (button :onclick \"bspc desktop -f $ws1\"	:class	\"w$un$o1$f1\"	\"\") (button :onclick \"bspc desktop -f $ws2\"	:class \"w$un$o2$f2\"	 \"󰈹\") (button :onclick \"bspc desktop -f $ws3\"	:class \"w$un$o3$f3\" \"󰣆\") (button :onclick \"bspc desktop -f $ws4\"	:class \"w$un$o4$f4\"	\"\") (button :onclick \"bspc desktop -f $ws5\"	:class \"w$un$o5$f5\" \"󰓇\" )  (button :onclick \"bspc desktop -f $ws6\"	:class \"w$un$o6$f6\" \"\") (button :onclick \"bspc desktop -f $ws7\"	:class \"w$un$o7$f7\" \"\") (button :onclick \"bspc desktop -f $ws8\"	:class \"w$un$o8$f8\" \"\"))"
-
+symbol() {
+	case $1 in
+        "kitty") echo "";;
+        "firefox") echo "󰈹";;
+        "code-oss") echo "󰨞";;
+        "vlc") echo "󰕼";;
+        "discord") echo "";;
+        "jetbrains-idea-ce") echo "";;
+        "thunar") echo "󰝰";;
+        *"FileRoller") echo "󰝰";;
+        "Gimp-"*) echo "";;
+        *"prismlauncher") echo "󰍳";;
+        "steam") echo "";;
+        *"planify") echo "";;
+        *"xournalpp") echo "";;
+        "Spotify") echo "";;
+        "libreoffice-calc") echo "󱎏";;
+        "libreoffice-writer") echo "󱎒";;
+        "libreoffice-impress") echo "󱎐";;
+        *) echo "󰣆";;  # Handle unknown inputs gracefully
+    esac
 }
 workspaces
-socat -u UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | while read -r line; do
-	workspaces
-done
+#socat -u UNIX-CONNECT:$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock - | while read -r line; do
+#	workspaces
+#done
