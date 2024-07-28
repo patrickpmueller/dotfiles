@@ -1,11 +1,8 @@
 .profile{
 	background-color: $background;
-	border-radius: 8px;
+	border-radius: 12px;
 	margin: .5rem;
 	padding: 3.1rem;
-	border-width: 2px;
-	border-color: $nord2;
-	border-style: solid;
 }
 .pfp {
 	background-image: url("assets/profile.png");
@@ -15,10 +12,6 @@
 	min-height: 200px;
 	min-width: 200px;
 	border-radius: 50%;
-	border-width: 3px;
-	border-color: $nord3;
-	border-style: solid;
-
   }
   .pfptxt {
 	margin-top: 30px;

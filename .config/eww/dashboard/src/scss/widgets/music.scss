@@ -1,21 +1,15 @@
 .music-player{
 	background-color: $background;
 	padding: 0 1.5rem 1rem 1.5rem;
-	border-radius: 8px;
+	border-radius: 12px;
 	margin: .5rem;
-	border-width: 2px;
-	border-color: $nord2;
-	border-style: solid;
 }
 .album_art {
 	background-size: cover;
 	background-position: center;
-	border-radius: 8px;
+	border-radius: 12px;
 	margin: 2rem 1rem 1.5rem 1rem;
 	padding: 7rem;
-	border-width: 3px;
-	border-color: $nord3;
-	border-style: solid;
 }
 
 .artist {
