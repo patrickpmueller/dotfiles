@@ -51,6 +51,7 @@ ipython
 jigdo
 kitty
 lib32-gamemode
+lib32-mesa-utils
 lib32-nvidia-utils-beta
 lib32-pipewire-jack
 lib32-vulkan-icd-loader
@@ -186,4 +187,4 @@ zerotier-one
 zoxide
 zsh
 zsh-autosuggestions
-zsh-completions\n
+zsh-completions
