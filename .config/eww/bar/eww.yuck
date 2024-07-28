@@ -211,7 +211,7 @@
 ;; Bar Windows ;;
 (defwindow bar
 	:geometry (geometry :x "15px"
-		:height "1170px"
+		:height "1410px"
 		:width "50px"
 		:anchor "center left")
 	:monitor 0
@@ -225,7 +225,7 @@
 ;; Calendar Windows ;;
 (defwindow calendar
 	:geometry (geometry :x "15px" 
-						:y "953px" 
+						:y "1193px" 
 						:width "300px" 
 						:height "150px")
 	:monitor 0
