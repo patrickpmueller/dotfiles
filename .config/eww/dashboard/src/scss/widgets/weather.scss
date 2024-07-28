@@ -1,8 +1,11 @@
 .weather{
 	font-family: JetBrainsMono Nerd Font;
 	background-color: $background-alt2;
-	border-radius: 12px;
+	border-radius: 8px;
 	padding: 2rem;
+	border-width: 3px;
+	border-color: $nord3;
+	border-style: solid;
 }
 .weather-day{
 	font-family: Comic Mono;

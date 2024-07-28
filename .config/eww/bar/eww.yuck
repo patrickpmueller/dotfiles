@@ -17,9 +17,26 @@
 		   	:onclick "scripts/popup.sh launcher"  "")))
 
 ;; Workspaces Widgets ;;
+(deflisten workspaces :initial "[]" "~/.config/eww/bar/scripts/get-workspaces.sh")
+(deflisten current_workspace :initial "1" "scripts/get-active-workspace.sh")
 (defwidget workspaces []
-	(literal :content workspace))
-(deflisten workspace "scripts/workspace.sh")
+    (box 
+      :space-evenly true
+      :orientation "v"	
+      :halign "center"	
+      :valign "start"
+      :class "works"
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          (box 
+	    :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            (label :text "${workspace.symbol}")
+          )
+        )
+      )
+    )
+  )
 
 ;; Battery Widgets ;;
 (defwidget bat []
@@ -29,14 +46,14 @@
 			:halign "end"		
 			:text battery	
 			:tooltip "Battery: ${battery-cappacity}%")))
-(defpoll battery			:interval "60s"	"scripts/battery.sh icon")
-(defpoll battery-cappacity	:interval "10s"	"scripts/battery.sh percent")
+(defpoll battery			:interval "30s"	"scripts/battery.sh icon")
+(defpoll battery-cappacity	:interval "15s"	"scripts/battery.sh percent")
 
 ;; Wifi Widgets ;;
 (defwidget wifi []
 	(box		:orientation "v"  
 				:tooltip wifi-name
-	(button		:onclick "scripts/popup wifi" 
+	(button		:onclick "scripts/popup.sh wifi" 
 				:class "wifi-icon" wifi-icon)))
 (defpoll wifi-icon :interval "3s" "scripts/wifi.sh icon")
 (defpoll wifi-name :interval "3s" "scripts/wifi.sh name")
@@ -61,7 +78,7 @@
 				   :min 0))
  			(label :class "brightness-icon" 
 			  	   :text "󰃠"))))
-(defpoll current-brightness :interval "10s" "brightnessctl -m -d amdgpu_bl0 | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
+(defpoll current-brightness :interval "10s" "brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}' | tr -d '%'")
 (defvar bright false)
 
 ;; Volume Widgets ;;
@@ -117,11 +134,11 @@
 			  :day calendar_day 
 			  :month calendar_month 
 			  :year calendar_year))))
-(defpoll calendar_day :interval "10h"
+(defpoll calendar_day :interval "1h"
     "date '+%d'")
-(defpoll calendar_month :interval "10h"
+(defpoll calendar_month :interval "1h"
     "scripts/calendar.sh")
-(defpoll calendar_year :interval "10h"
+(defpoll calendar_year :interval "1h"
     "date '+%Y'")
 
 ;; Powermenu Widgets ;;
@@ -214,7 +231,4 @@
 	:monitor 0
 	:stacking "fg"
 (cal))
-
-
-
 
