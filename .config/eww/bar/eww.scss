@@ -54,7 +54,7 @@ $white: $foreground;
     color: $cyan;
     font-family: "JetBrainsMono Nerd Font Propo";
     font-size: 1.7em;
-    padding: 1rem 0rem 1rem 0;
+    padding: 0.8rem 0rem 1rem 0;
 }
 
 // Workspaces
@@ -64,32 +64,21 @@ $white: $foreground;
     border-radius: 5px;
 }
 
-.w0 , .w01, .w02, .w03, .w04, .w05, .w06, .w07, .w08,
-.w011, .w022, .w033, .w044, .w055, .w066, .w077, .w088 { 
-    font-size: 2.3em;
-    margin: .3rem 0 .3rem 0;
-    font-family: "JetBrainsMono NFM";
+.workspace-entry { 
+  font-size: 2.3em;
+  margin: .3rem 0 .3rem 0;
+  font-family: "JetBrainsMono NFM";
 }
 
-/* Unoccupied */
-.w0 {
-color: $nord2;
+.empty {
+  color: $nord2; 
 }
 
-/* Occupied */
-.w01, .w02, .w03, .w04, .w05, .w06, .w07, .w08 {
-  color: $nord4;
+.occupied {
+    color: $nord4;
 }
 
-/* Focused */
-.w011,
-.w022,
-.w033,
-.w044,
-.w055,
-.w066,
-.w077,
-.w088 {
+.current {
   color: $nord7;
 }
 
@@ -123,6 +112,10 @@ scale trough {
 }
 .volbar trough highlight {
   background-color: $nord7;
+  border-radius: 5px;
+}
+.bribar trough highlight {
+  background-color: $nord13;
   border-radius: 5px;
 }
 
