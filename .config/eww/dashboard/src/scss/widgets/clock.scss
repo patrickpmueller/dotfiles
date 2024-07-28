@@ -3,10 +3,7 @@
 	color: $foreground;
 	margin: .5rem;
 	padding: 0 8.6rem 0 8.6rem;
-	border-width: 2px;
-	border-color: $nord2;
-	border-style: solid;
-	border-radius: 8px;
+	border-radius: 12px;
 }
 .hour, .min, .separator-clock{
 	padding: 1rem 0 0 0;
