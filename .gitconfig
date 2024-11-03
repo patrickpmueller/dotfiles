@@ -1,0 +1,7 @@
+[user]
+	email = patrickpmueller@yahoo.com
+	name = Patrick Pellacani Müller
+[core]
+	editor = nvim
+[init]
+	defaultBranch = master

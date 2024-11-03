@@ -1,0 +1,17 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;; Created & Designed by: https://github.com/rxyhn ;;;;
+;;;;			AESTHETIC DASHBOARD					 ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(include "./src/yuck/widgets.yuck")
+(include "./src/yuck/variables.yuck")
+
+(defwindow dashboard
+    :monitor 0
+    :geometry (geometry :x "0"
+                        :y "0"
+                        :anchor "center")
+    :windowtype "dock"
+    :wm-ignore true
+(dashboard))
+	
