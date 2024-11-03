@@ -43,9 +43,9 @@ $white: $foreground;
 .eww_bar{
   background-color: $nord0;
   padding: .5rem;
-  border-radius: 8px;
+  border-radius: 6px;
   border-color: $nord2;
-  border-width: 2px;
+  border-width: 3px;
   border-style: solid;
 }
 
@@ -101,12 +101,6 @@ border-radius: 5px;
 .volume-icon{
   margin: .2rem 0 .2rem 0;
   color: $nord7;
-}
-.bat{
-  font-family: JetBrainsMono Nerd Font Propo;
-  font-size: 1.2em;
-  padding-right: .445rem;
-  color: $nord9;
 }
 scale trough {
   all: unset;
