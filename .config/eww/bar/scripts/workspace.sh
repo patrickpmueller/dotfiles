@@ -43,7 +43,7 @@ symbol() {
         "thunar") echo "󰝰";;
         *"FileRoller") echo "󰝰";;
         "Gimp-"*) echo "";;
-        *"prismlauncher") echo "󰍳";;
+        *"PrismLauncher") echo "󰍳";;
         "steam") echo "";;
         *"planify") echo "";;
         *"xournalpp") echo "";;

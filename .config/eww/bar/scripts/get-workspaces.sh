@@ -46,6 +46,9 @@ symbol() {
         "libreoffice-writer") echo "󱎒";;
         "libreoffice-impress") echo "󱎐";;
         *"Inkscape") echo "";;
+        "PrusaSlicer") echo "";;
+        "FreeCAD") echo "";;
+        "UltiMaker-Cura") echo "󰐫";;
         *) echo "󰣆";;  # Handle unknown inputs gracefully
     esac
 }
