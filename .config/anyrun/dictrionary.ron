@@ -1,5 +1,0 @@
-// <Anyrun config dir>/dictionary.ron
-Config(
-  prefix: ":d",
-  max_entries: 6,
-)

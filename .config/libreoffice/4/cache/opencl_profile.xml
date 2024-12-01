@@ -4,13 +4,13 @@
  <device>
   <type>opencl</type>
   <name>NVIDIA GeForce RTX 3070 Ti</name>
-  <driver>560.35.03</driver>
-  <time>12310</time>
+  <driver>565.57.01</driver>
+  <time>11853</time>
   <errors>false</errors>
  </device>
  <device>
   <type>native</type>
-  <time>2098176</time>
+  <time>2055168</time>
   <errors>false</errors>
  </device>
 </profile>

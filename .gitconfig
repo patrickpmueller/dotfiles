@@ -1,7 +1,10 @@
 [user]
 	email = patrickpmueller@yahoo.com
 	name = Patrick Pellacani Müller
+	signingkey = 0F1FEBB55B152F6A
 [core]
 	editor = nvim
 [init]
 	defaultBranch = master
+[commit]
+	gpgsign = true
