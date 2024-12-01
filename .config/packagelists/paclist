@@ -1,6 +1,5 @@
 alsa-firmware
 alsa-utils
-anyrun-git
 apache
 arch-install-scripts
 audacity
@@ -14,8 +13,10 @@ chromium
 chrony
 cliphist
 code
+coin
 cpio
 cups
+cura-bin
 davinci-resolve
 devtools
 dialog
@@ -35,7 +36,7 @@ flatpak
 freecad
 fzf
 gamemode
-gamescope-nvidia-git
+gamescope
 gamescope-session-steam-git
 ghostscript
 gimp
@@ -50,6 +51,7 @@ gtk4
 gvfs
 haveged
 hdparm
+hplip
 htop
 hyprcursor
 hyprland
@@ -57,6 +59,7 @@ hyprlang
 hyprlock
 hyprpaper
 hyprpicker
+hyprpolkitagent-git
 i3-wm
 i3blocks
 i3lock
@@ -67,7 +70,6 @@ intellij-idea-community-edition
 intltool
 ipython
 jdk21-openjdk
-jigdo
 jre8-openjdk
 kitty
 lib32-gamemode
@@ -82,6 +84,7 @@ libreoffice-fresh
 libva
 libva-nvidia-driver
 libvirt
+lightdm
 linux
 linux-firmware
 linux-headers
@@ -111,6 +114,7 @@ nordic-theme
 nordzy-cursors
 noto-fonts
 npm
+nss-mdns
 ntfs-3g
 nvidia-open-dkms
 nvidia-settings
@@ -119,6 +123,7 @@ nvtop
 nwg-look
 openbsd-netcat
 opencl-nvidia
+openscad
 os-prober
 oversteer
 p7zip
@@ -140,10 +145,13 @@ powertop
 prismlauncher
 proton-ge-custom-bin
 prusa-slicer
+putty
 pwgen
+python-dbus
 python-opencv
 python-pipx
 python-pynvim
+python-pyqt5
 python-ruff
 python-ruff-api
 python-unidecode
@@ -180,21 +188,14 @@ reflector
 rofi-wayland
 rust-analyzer
 samba
-scid
 sddm
 shellcheck
 smartmontools
 socat
 sof-firmware
 spotify-launcher
-sqliteodbc
 steam
-stockfish-git
 sudo
-sway
-sway-nvidia
-swayidle
-swaylock
 tcpdump
 texinfo
 texlive-basic
@@ -219,6 +220,7 @@ ufw
 unixodbc
 unrar
 unzip
+uwsm
 vifm
 vlc
 vulkan-tools
