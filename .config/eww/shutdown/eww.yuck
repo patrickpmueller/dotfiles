@@ -1,0 +1,55 @@
+;; Created   by https://github.com/rxyhn
+;; Designed  by https://github.com/rxyhn
+;; Maintaned by https://github.com/rxyhn
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							Widget Section's							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Powermenu Widgets ;;
+(defwidget power []
+	(box		:orientation "h"					
+			:space-evenly "false" 	 
+			:vexpand "false" 	
+			:class "powermenu"
+			:space-evenly "false"
+	
+  	(button		:class "button-reb"					
+	  		:tooltip "Reboot"		 
+			:onclick "reboot" "")
+
+	(button		:class "button-quit" 				
+			:tooltip "Logout" 		 
+			:onclick "hyprctl dispatch exit" "󰿅")
+
+	(button		:class "button-lock" 				
+			:tooltip "Lock Screen"	 
+			:onclick "betterlockscreen -l"	"")
+
+	(button		:class "button-off"					
+			:tooltip "Shutdown"		 
+			:onclick "shutdown now"	"")))
+
+;; Bar Widgets ;;
+(defwidget bar []
+	(box :class "eww_bar" 
+		 :orientation "h" 
+		 :vexpand "true" 
+		 :hexpand "true"
+(power)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							Window Section's							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Bar Windows ;;
+(defwindow powermenu 
+	:geometry (geometry :x "1000px"
+		:y "200px"
+		:anchor "center"
+			:width "315px")
+	:monitor 0
+	:hexpand "true"
+	:vexpand "true"
+	:exclusive "false"
+	:stacking "overlay"
+	:namespace "powermenu"
+(bar))
