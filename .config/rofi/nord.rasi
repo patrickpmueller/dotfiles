@@ -41,7 +41,7 @@ window {
     location: center;
     anchor:   center;
     transparency: "screenshot";
-    padding: 40% 30% 40% 30%;
+    padding: 40% 20% 40% 20%;
     border:  0px;
 	border-color: @transparent;
     border-radius: 8px;
