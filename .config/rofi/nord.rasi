@@ -31,7 +31,7 @@
     foreground:  @nord9;
     backlight:   @nord15;
     background-color:  transparent;
-    
+
     highlight:     underline bold #eceff4;
 
     transparent: rgba(46,52,64,0);
@@ -41,12 +41,12 @@ window {
     location: center;
     anchor:   center;
     transparency: "screenshot";
-    padding: 40% 30% 40% 30%;
+    padding: 40% 14% 40% 14%;
     border:  0px;
 	border-color: @transparent;
     border-radius: 8px;
 
-    background-color: @transparent;
+    background-color: rgba(0, 0, 0, 0.7);
     spacing: 0;
     children:  [mainbox];
     orientation: horizontal;

@@ -15,7 +15,7 @@ configuration {
 @theme "~/.config/rofi/nord.rasi"
 
 listview {
-	lines: 16;
+	lines: 12;
 	columns: 1;
 }
 
