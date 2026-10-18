@@ -1,4 +1,7 @@
-# @patrickpmueller's dotfiles
+# THIS REPOSITORY IS ARCHIVED.
+I no longer use these dotfiles. They may still work, they may not work.
+
+## @patrickpmueller's dotfiles
 
 This is my personal collection of dotfiles, based on the [Nord theme](nordtheme.com)
 
